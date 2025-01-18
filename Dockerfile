@@ -5,7 +5,7 @@ FROM openjdk:21
 WORKDIR /app
 
 # Copy the JAR file from the correct path in the build context
-COPY /myscm-0.0.1-SNAPSHOT.jar /app/myscm-0.0.1-SNAPSHOT.jar
+COPY target/myscm-0.0.1-SNAPSHOT.jar /app/myscm-0.0.1-SNAPSHOT.jar
 
 # Expose the application port
 EXPOSE 8080
