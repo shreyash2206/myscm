@@ -14,7 +14,7 @@ RUN yum update -y && \
 WORKDIR /app
 
 # Copy pom.xml and pre-fetch dependencies
-COPY pom.xml ./
+COPY pom.xml ./ 
 RUN mvn dependency:go-offline -B
 
 # Copy the source code and build the application
@@ -28,9 +28,13 @@ WORKDIR /app
 # Copy the built JAR from the build stage
 COPY --from=build /app/target/myscm-0.0.1-SNAPSHOT.jar /app/myscm-0.0.1-SNAPSHOT.jar
 
+# Copy wait-for-it.sh into the container
+COPY wait-for-it.sh /app/
+RUN chmod +x /app/wait-for-it.sh
+
 # Expose the application port
 EXPOSE 8080
 
-# Set the entry point
-ENTRYPOINT ["java", "-jar", "/app/myscm-0.0.1-SNAPSHOT.jar"]
+# Set the entry point to wait for the database and then start the application
+ENTRYPOINT ["/app/wait-for-it.sh", "db-host:3306", "--", "java", "-jar", "/app/myscm-0.0.1-SNAPSHOT.jar"]
 
