@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}"
+>
+<head>
+  <title>About Page</title>
+</head>
+<body class="bg-gray-100">
+  <div id="content" class="container mx-auto p-8">
+    <div class="bg-white shadow-lg rounded-lg p-6">
+      <h1 class="text-4xl font-bold text-center text-gray-800 mb-6">Welcome to the About Page</h1>
+      <p class="text-lg text-gray-600 leading-relaxed mb-4">
+        SCM is designed to simplify
+          contact management with an intuitive interface and advanced features
+          that help you stay connected and organized. Whether you are an
+          individual or a business, SCM helps you manage and organize your contacts
+      </p>
+      <p class="text-lg text-gray-600 leading-relaxed">
+        This project is all about creating a Smart Contact Manager using Spring Boot. It helps you to organize and manage your contacts effectively.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    console.log("about page");
+  </script>
+  <script>
+    console.log("second about page script");
+  </script>
+</body>
+</html>

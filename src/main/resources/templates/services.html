@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title},~{})}">
+  <head>
+  
+    <title>
+      Services
+    </title>
+  </head>
+  <body>
+    <section id="content" class="py-12">
+      <h1 class="text-4xl font-bold text-center mb-6">Welcome to Services Page</h1>
+      <h2 class="text-2xl text-center mb-8">Services offered by SCM</h2>
+
+      <p class="text-center max-w-3xl mx-auto mb-12">
+        
+      </p>
+
+      <!-- Services Section -->
+      <div class="container mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Service 1 -->
+          <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <div class="h-64 overflow-hidden">
+              <img
+                src="/images/cloud_img.png"
+                alt="Service 1 Image"
+                class="w-full h-full object-cover transition-transform duration-300 hover:scale-90"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-semibold mb-2">Service Title 1</h3>
+              <p class="text-gray-600">
+                This service focuses on seamless cloud storage for contacts and easy retrieval anytime, anywhere.x
+              </p>
+            </div>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <div class="h-64 overflow-hidden">
+              <img
+                src="/images/search.png"
+                alt="Service 2 Image"
+                class="w-full h-full object-cover transition-transform duration-300 hover:scale-90"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-semibold mb-2">Service Title 2</h3>
+              <p class="text-gray-600">
+                Advanced search functionalities let you quickly find and organize contacts based on criteria.
+              </p>
+            </div>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <div class="h-64 overflow-hidden">
+              <img
+                src="/images/mail.png"
+                alt="Service 3 Image"
+                class="w-full h-full object-cover transition-transform duration-300 hover:scale-90"
+              />
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-semibold mb-2">Service Title 3</h3>
+              <p class="text-gray-600">
+                Send email directly to the Contact and Export all conacts to excel file.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+
+</html>
