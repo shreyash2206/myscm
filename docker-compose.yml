@@ -8,10 +8,11 @@ services:
       MYSQL_ROOT_PASSWORD: Shreyash@22
       MYSQL_DATABASE: scmdb
     ports:
-      - "3306:3306"
+      - "3307:3306"
 
     volumes:
       - ./mysql_data:/var/lib/mysql
+      - ./mysql_config/my.cnf:/etc/mysql/my.cnf  # Mount your custom configuration file
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
@@ -28,7 +29,7 @@ services:
     depends_on:
       - mysql
   springboot:
-    build: Dockerfile
+    build: .
     container_name: scm_springboot_project
     environment:
       SERVER_PORT: 8080
@@ -47,6 +48,10 @@ services:
       CLOUDINARY_NAME: dmkycccsx
     ports:
       - "8082:8080"
+    depends_on:
+      - mysql
+volumes:
+  mysql_data:
     depends_on:
       - mysql
 volumes:
