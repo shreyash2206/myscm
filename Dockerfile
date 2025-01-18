@@ -1,5 +1,6 @@
 # Stage 1: Build the application
-FROM maven:3.8.7-openjdk-17 AS build
+FROM amazoncorretto:17 AS build
+RUN yum install -y maven
 WORKDIR /app
 COPY pom.xml .
 COPY src ./src
