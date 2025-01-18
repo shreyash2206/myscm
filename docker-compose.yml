@@ -28,7 +28,7 @@ services:
     depends_on:
       - mysql
   springboot:
-    build: .
+    build: Dockerfile
     container_name: scm_springboot_project
     environment:
       SERVER_PORT: 8080
