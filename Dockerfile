@@ -28,9 +28,7 @@ WORKDIR /app
 # Copy the built JAR from the build stage
 COPY --from=build /app/target/myscm-0.0.1-SNAPSHOT.jar /app/myscm-0.0.1-SNAPSHOT.jar
 
-# Copy wait-for-it.sh into the container
-COPY wait-for-it.sh /app/
-RUN chmod +x /app/wait-for-it.sh
+
 
 # Expose the application port
 EXPOSE 8080
