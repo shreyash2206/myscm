@@ -1,14 +1,13 @@
-# Use OpenJDK 21 as the base image
-FROM openjdk:21
-
-# Set the working directory inside the container
+# Stage 1: Build the application
+FROM maven:3.9-openjdk-21 AS build
 WORKDIR /app
+COPY pom.xml .
+COPY src ./src
+RUN mvn clean package -DskipTests
 
-# Copy the JAR file from the correct path in the build context
-COPY target/myscm-0.0.1-SNAPSHOT.jar /app/myscm-0.0.1-SNAPSHOT.jar
-
-# Expose the application port
+# Stage 2: Run the application
+FROM openjdk:21
+WORKDIR /app
+COPY --from=build /app/target/myscm-0.0.1-SNAPSHOT.jar /app/myscm-0.0.1-SNAPSHOT.jar
 EXPOSE 8080
-
-# Set the entry point for the container to run the JAR file
 ENTRYPOINT ["java", "-jar", "/app/myscm-0.0.1-SNAPSHOT.jar"]
