@@ -5,7 +5,7 @@ services:
     image: mysql:8
     container_name: mysql_db_docker
     environment:
-      MYSQL_ROOT_PASSWORD: Shreyash@22
+      MYSQL_ROOT_PASSWORD: 
       MYSQL_DATABASE: scmdb
     ports:
       - "3307:3306"
@@ -22,7 +22,7 @@ services:
       PMA_HOST: mysql
       PMA_PORT: 3306
       PMA_USER: root
-      PMA_PASSWORD: Shreyash@22
+      PMA_PASSWORD: 
 
     ports:
       - "8081:80"
@@ -37,15 +37,15 @@ services:
       MYSQL_PORT: 3306
       MYSQL_DB: scmdb
       MYSQL_USER: root
-      MYSQL_PASSWORD: Shreyash@22
+      MYSQL_PASSWORD: 
       EMAIL_HOST: smtp.gmail.com
       EMAIL_PORT: 587
-      EMAIL_USERNAME: shreyash112203@gmail.com
-      EMAIL_PASSWORD: frnb ixvy akwq kydd
+      EMAIL_USERNAME: @gmail.com
+      EMAIL_PASSWORD: 
       EMAIL_DOMAIN: smtp.gmail.com
       CLOUDINARY_API_KEY: 966361831981928
-      CLOUDINARY_API_SECRET: j1NfmmnEi8l_Ozbn6EjFTkoA_-U
-      CLOUDINARY_NAME: dmkycccsx
+      CLOUDINARY_API_SECRET: 
+      CLOUDINARY_NAME: 
     ports:
       - "8082:8080"
     depends_on:
